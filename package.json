@@ -84,7 +84,7 @@
     "semver": "^7.3.7"
   },
   "resolutions": {
-    "@safe-global/safe-deployments": "file:../safe-deployments"
+    "@safe-global/safe-deployments": "https://github.com/SYS-Labs/safe-deployments#main"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.1.1",

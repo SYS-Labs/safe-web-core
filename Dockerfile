@@ -4,9 +4,6 @@ WORKDIR /app
 COPY . .
 
 # install deps
-RUN git clone https://github.com/SYS-Labs/safe-deployments /safe-deployments
-RUN cd /safe-deployments; yarn; yarn add --dev rimraf typescript@4.2.4 @types/semver; yarn rimraf dist && yarn tsc
-RUN yarn add file:/safe-deployments
 RUN yarn install
 RUN yarn fix
 
