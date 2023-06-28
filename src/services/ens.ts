@@ -15,13 +15,12 @@ export function isDomain(domain: string): boolean {
 
 export const resolveName = async (rpcProvider: JsonRpcProvider, name: string): Promise<string | undefined> => {
   try {
-    const network = await rpcProvider.getNetwork();
-    const resolver = "function" === typeof network._defaultProvider ?
-      network._defaultProvider(network) || {} : {}
+    const network = await rpcProvider.getNetwork()
+    const resolver = 'function' === typeof network._defaultProvider ? network._defaultProvider(network) || {} : {}
 
-    if ("object" === typeof resolver && resolver.network) {
-      console.log("Resolve name with custom method");
-      if ("any" === resolver.network) {
+    if ('object' === typeof resolver && resolver.network) {
+      console.log('Resolve name with custom method')
+      if ('any' === resolver.network) {
         const provider = new JsonRpcProvider(resolver.url, resolver.network)
         return (await provider.resolveName(name)) || undefined
       }
